@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anas's Resume</title>
+    <link rel="icon" href="assets/images/cv.png" type="icon">
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/live-resume.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Theme Toggle</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .checkbox {
+        opacity: 0;
+        position: absolute;
+      }
+
+      .checkbox-label {
+        background-color: #333;
+        width: 61px;
+        height: 35px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .fa-moon {
+        color: #f6f1d5;
+      }
+
+      .fa-sun {
+        color: #f39c12;
+      }
+
+      .checkbox-label .ball {
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+      }
+
+      .checkbox:checked + .checkbox-label .ball {
+        transform: translateX(24px);
+      }
+
+      .dark-theme {
+        background-color: #6b6a6b;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="dark-mode-toggle"
+      style="margin-top: 50px; text-align: center !important"
+    >
+      <input type="checkbox" class="checkbox" id="checkbox" />
+      <label for="checkbox" class="checkbox-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+      </label>
+    </div>
+
+    <script>
+      const userPrefersDark = localStorage.getItem("theme") === "dark";
+
+      function setThemePreference(prefersDark) {
+        if (prefersDark) {
+          document.body.classList.add("dark-theme");
+        } else {
+          document.body.classList.remove("dark-theme");
+        }
+      }
+
+      setThemePreference(userPrefersDark);
+
+      const checkbox = document.getElementById("checkbox");
+      checkbox.checked = userPrefersDark;
+
+      checkbox.addEventListener("change", (event) => {
+        const isDarkMode = event.target.checked;
+        setThemePreference(isDarkMode);
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+      });
+    </script>
+  </body>
+</html>
+<!-- <body>
+    <header>
+        <div class="  ml-auto mr-3 ml-md-0 mr-md-auto">
+        </div> -->
+        <!-- <nav class="collapsible-nav" id="collapsible-nav"> -->
+
+
+            <!-- <a href="/" class="nav-link active">RESUME</a> -->
+            <!-- <a href="resume.html" class="nav-link "></a> -->
+            <!-- <a href="/portfolio" class="nav-link ">PORTFOLIO</a> -->
+     
+        <!-- </nav> -->
+        <!-- <button class="btn btn-menu-toggle btn-white rounded-circle" data-toggle="collapsible-nav"
+            data-target="collapsible-nav"><img src="../assets/images/hamburger.svg" alt="hamburger"></button>
+
+    </header> -->
+    <div class="content-wrapper">
+        <aside>
+            <div class="profile-img-wrapper">
+                <img src="../assets/images/profpic.jpeg" alt="profile">
+            </div>
+            <h1 class="profile-name">Anas Al-Hamdan</h1>
+            <div>
+
+
+
+
+                <div class="text-center" style="text-align: center;">
+                    <span class="badge badge-white badge-pill profile-designation" style="display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 50px; background-color: #fff; border: 1px solid #ccc;">
+                        <!-- Pulsing Dot -->
+                        <div id="holder" style="margin-right: 10px; position: relative; width: 15px; height: 12px;">
+                            <div style="width: 10px; height: 10px; border: 5px solid #11ba11; border-radius: 30px; background-color: #00FF00; z-index: 10; position: absolute; left: 0px; top: 0px;"></div>
+                            <div style="border: 10px solid #00FF00; background: transparent; border-radius: 60px; height: 50px; width: 50px; animation: pulse 3s ease-out infinite; position: absolute; top: -20px; left: -20px; z-index: 1; opacity: 0;"></div>
+                        </div>
+                        <!-- Text -->
+                        <span>Available for work</span>
+                    </span>
+                </div>
+                
+                <!-- Pulsing Animation -->
+                <style>
+                @keyframes pulse {
+                  0% {
+                    transform: scale(0);
+                    opacity: 0.0;
+                  }
+                  25% {
+                    transform: scale(0);
+                    opacity: 0.1;
+                  }
+                  50% {
+                    transform: scale(0.1);
+                    opacity: 0.3;
+                  }
+                  75% {
+                    transform: scale(0.5);
+                    opacity: 0.5;
+                  }
+                  100% {
+                    transform: scale(1);
+                    opacity: 0.0;
+                  }
+                }
+                </style>
+                
+                
+                
+                
+                
+            
+                
+
+
+            
+                
+                
+
+
+
+
+            </div>
+
+            <nav class="social-links">
+                <!-- <a href="https://x.com/Anasalhamdan_" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                <!-- <a href="https://github.com/misharii" class="social-link"><i class="fab fa-github"></i></a> -->
+                <a href="https://linkedin.com/in/anas-al-hamdan-254605212" class="social-link"><i class="fab fa-linkedin"></i></a>
+            </nav>
+            <div class="widget">
+                <div class="widget card">
+                    <div class="card-body">
+                        <div class="widget-content">
+                            <h5 class="widget-title card-title">Personal Information</h5>
+                            <p><strong>Date of Birth:</strong> 2001/06/10</p>
+                            <p><strong>PHONE:</strong><br>
+                                 +966 532487724</p>
+                            <p><strong>MAIL:</strong><br> Anasalhamdan4b@gmail.com</p>
+                            <p><strong>Location:</strong><br> Riyadh, Saudi Arabia</p>
+                        </div>
+                    </div>
+                </div>
+                
+            
+            
+            <div>
+                <a href="../assets/resume/Anas-Alhamdan-Resume.pdf" download="Anas-Alhamdan-Resume.pdf">
+                    <button class="btn btn-download-cv btn-primary rounded-pill">
+                        <img src="../assets/images/download.svg" alt="download" class="btn-img">DOWNLOAD CV</button>
+                </a>
+            </div>
+            
+
+            </div>
+            <div class="widget card">
+                <div class="card-body">
+                    <div class="widget-content">
+                        <h5 class="widget-title card-title">Skills</h5>
+                        <p>Product Management</p>
+                        <p>Data Analysis</p>
+                        <p>Information Retrieval</p>
+                        <p>NLP</p>
+                        <p></p>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main >
+            <section class="resume-section ">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h6 class="section-subtitle">RESUME</h6>
+                        <h2 class="section-title">EDUCATION</h2>
+                        <ul class="time-line">
+                            <li class="time-line-item">
+                                <span class="badge badge-primary">2021 - Present</span>
+                                <h6 class="time-line-item-title">Bachelor Degree in Computer science</h6>
+                                <p class="time-line-item-subtitle">King Saud University</p>
+                                <p class="time-line-item-content"> Expected Graduation Date: Sep 2025</p>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <h6 class="section-subtitle">Experience</h6>
+                        <h2 class="section-title">Projects</h2>
+                        <ul class="time-line">
+                            <li class="time-line-item">
+                                <span class="badge badge-primary">2024/11 - Present</span>
+                                <h6 class="time-line-item-title">UniBag</h6>
+                                <p class="time-line-item-subtitle">Description: Developed an innovative platform designed to enhance university students' learning experience. UniBag centralizes 
+                                    study materials, tracks progress, and provides AI-generated practice questions to support efficient and effective 
+                                    academic achievement. Introduced structured learning, personalized scheduling, and an extensive academic 
+                                    repository to address common student challenges.</p>
+                                <!-- <p class="time-line-item-content">Technologies Used: Python, Flask -->
+                                </p>
+                            </li>
+                            <li class="time-line-item">
+                                <span class="badge badge-primary"> 2024/09 – 2024/10  </span>
+                                <h6 class="time-line-item-title"> Boolean Search Engine</h6>
+                                <p class="time-line-item-subtitle"> Description: Developed a Python-based search engine that indexes and searches news articles using an inverted index and 
+                                    boolean search. Utilized multiprocessing to enhance indexing performance, allowing efficient processing of large 
+                                    datasets. Implemented user-friendly features like logical query parsing and real-time result display.
+                                      </p>
+                                <p class="time-line-item-content">
+                                   
+                                    
+                                    Technologies Used: Python, Text Preprocessing, Inverted Index
+                                </p>
+                            </li>
+                            <li class="time-line-item">
+                                <span class="badge badge-primary"> 2024/11 – 2024/11  </span>
+                                <h6 class="time-line-item-title"> Email Spam Classifier </h6>
+                                <p class="time-line-item-subtitle"> Description: This project involves developing an automated email spam classifier capable of categorizing emails as either SPAM or HAM (not spam). The classifier is built using the Multinomial Naive Bayes algorithm, a simple yet effective method for text classification tasks.
+                                      </p>
+                                <p class="time-line-item-content">
+                                   
+                                    
+                                    Technologies Used: Python, Multinomial Naive Bayes, Tokenization, Stemming, Vectorization.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="clients-section">
+                <!-- <h6 class="section-subtitle">Technologies</h6> -->
+                <h2 class="section-title">Technologies</h2>
+                <div class="client-logos-wrapper">
+
+                    <div class="client-logo">
+                        <img src="../assets/images/python_icon.png" alt="logo" style="width: auto; height: auto;">
+                    </div>
+
+                    <div class="client-logo">
+                        <img src="../assets/images/JAVA_PIC.png" alt="logo" style="width: auto; height: auto;">
+                    </div>
+
+                    <div class="client-logo">
+                         <img src="../assets/images/numpy_pic.png" alt="logo" style="width: auto; height: auto;">
+                    </div>
+
+                    <div class="client-logo">
+                        <img src="../assets/images/sql_pic.png" alt="logo" style="width: auto; height: auto;">
+                    </div>
+
+             
+                </div>
+            </section>
+            <section class="services-section">
+                <h6 class="section-subtitle">WHAT I KNOW</h6>
+                <h2 class="section-title">Skills</h2>
+                <div class="row">
+                    <div class="media service-card col-lg-6">
+                        <div class="service-icon">
+                            <img src="../assets/images/10608754.png" width="24px" alt="target">
+                        </div>
+                        <div class="media-body">
+                            <h5 class="service-title">Product Management</h5>
+                            <p class="service-description"> Roadmap Development, Market Research, Cross
+                                functional Team Coordination, Product Lifecycle 
+                                Management, Data-driven Strategy.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media service-card col-lg-6">
+                        <div class="service-icon">
+                            <img src="../assets/images/microchip-ai.png" width="24px" alt="bulb"> 
+                        </div>
+                        <div class="media-body">
+                            <h5 class="service-title"> NLP & Machine Learning  </h5>
+                            <p class="service-description"> Word Embedding Models, Semantic Analysis, 
+                                Information Retrieval
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media service-card col-lg-6">
+                        <div class="service-icon">
+                            <img src="../assets/images/data_logo.png" width="24px" alt="bulb"> 
+                        </div>
+                        <div class="media-body">
+                            <h5 class="service-title"> Data Analysis  </h5>
+                            <p class="service-description"> Pandas, NumPy, SQL
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media service-card col-lg-6">
+                        <div class="service-icon">
+                            <img src="../assets/images/002-development.svg" alt="development">
+                        </div>
+                        <div class="media-body">
+                            <h5 class="service-title"> Programming Languages </h5>
+                            <p class="service-description"> Python, Java, HTML, CSS, SQL, LaTeX.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="media service-card col-lg-6">
+                        <div class="service-icon">
+                            <img src="../assets/images/square-terminal.png" width="24px">
+                        </div>
+                        <div class="media-body">
+                            <h5 class="service-title"> Tools & Platforms                            </h5>
+                            <p class="service-description"> Git, Jupyter Notebooks
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="achievements-section"> -->
+                <!-- <h6 class="section-subtitle">WHAT I DO</h6> -->
+                <!-- <h2 class="section-title">Publications</h2> -->
+                <!-- <div > -->
+                    <!-- <div class="media achievement-card">
+                        <img src="assets/images/puzzle.svg" alt="puzzle" class="achievement-card-icon">
+                        <div class="media-body">
+                            <h4 class="achievement-card-title">550+</h4>
+                            <p class="achievement-card-description">COMPLETED PROJECTS</p>
+                        </div>
+                    </div>
+                    <div class="media achievement-card">
+                        <img src="assets/images/team.svg" alt="puzzle" class="achievement-card-icon">
+                        <div class="media-body">
+                            <h4 class="achievement-card-title">23K</h4>
+                            <p class="achievement-card-description">HAPPY CLIENTS</p>
+                        </div>
+                    </div>
+                    <div class="media achievement-card">
+                        <img src="assets/images/trophy.svg" alt="puzzle" class="achievement-card-icon">
+                        <div class="media-body">
+                            <h4 class="achievement-card-title">55</h4>
+                            <p class="achievement-card-description">AWARDS RECIEVED</p>
+                        </div>
+                    </div> -->
+                   <!-- <strong > 
+                    Nabesh: Building a Scalable Arabic Word Similarity Ranker<br></strong>
+                    Mohamed Alkaoud∗, Mishari Albuhairi†, Abdulaziz Alabdulkarim‡ , Mohammed AlSowelim§
+                     <br> -->
+
+                 <!-- <h6>Second author in the paper</h6> -->
+                 <!-- <br>
+                    waiting for approval from <strong>IEEE Transactions on Communications</strong>
+                </div>
+            </section> -->
+       
+        <!-- </div> -->
+        <section class="portfolio-section">
+            <h2 class="section-title">PORTFOLIO</h2>
+            
+            <div class="portfolio-wrapper">
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/UNI.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">UNIBAG</h5>
+                        <p class="portfolio-item-description">AI-powered platform that streamlines your study process by organizing your materials, generating practice questions, and tracking your progress, And much more.</p>
+                    </figcaption>
+                </figure>
+                
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/TASK.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">TASK MANAGER </h5>
+                        <p class="portfolio-item-description">A task management platform, similar to Trello, that enables users to track the status of tasks, assign tasks to team members, and view details such as task descriptions, deadlines, and participating members.</p>
+                    </figcaption>
+                </figure>
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/police.jpg" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">Police Station Case Management System</h5>
+                        <p class="portfolio-item-description">Developed a case management system for police stations to track and manage case information effectively</p>
+                    </figcaption>
+                </figure>
+                <!-- <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/img_4.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">PROJECT 04</h5>
+                        <p class="portfolio-item-description">Branding, Photography</p>
+                    </figcaption>
+                </figure>
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/img_5.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">PROJECT 05</h5>
+                        <p class="portfolio-item-description">Branding, Photography</p>
+                    </figcaption>
+                </figure>
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/img_6.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">PROJECT 06</h5>
+                        <p class="portfolio-item-description">Branding, Photography</p>
+                    </figcaption>
+                </figure>
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/img_7.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">PROJECT 07</h5>
+                        <p class="portfolio-item-description">Branding, Photography</p>
+                    </figcaption>
+                </figure>
+                <figure class="portfolio-item hover-box">
+                    <img src="../assets/images/img_8.png" alt="project" class="portfolio-item-img">
+                    <figcaption class="portfolio-item-details overlay">
+                        <h5 class="portfolio-item-title">PROJECT 08</h5>
+                        <p class="portfolio-item-description">Branding, Photography</p>
+                    </figcaption>
+                </figure> -->
+            </div>
+        </section>
+        
+    </div>
+ 
+        </main>
+    </div>
+    <script src="../assets/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/vendors/@popperjs/core/dist/umd/popper-base.min.js"></script>
+    <script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/live-resume.js"></script>
+</body>
+
+</html>
+
