@@ -12,104 +12,56 @@
     <link rel="stylesheet" href="assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="assets/css/live-resume.css">
 </head>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dark Theme Toggle</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
-      .checkbox {
-        opacity: 0;
-        position: absolute;
-      }
 
-      .checkbox-label {
-        background-color: #333;
-        width: 61px;
-        height: 35px;
-        border-radius: 50px;
-        position: relative;
-        padding: 5px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .fa-moon {
-        color: #f6f1d5;
-      }
-
-      .fa-sun {
-        color: #f39c12;
-      }
-
-      .checkbox-label .ball {
-        background-color: #fff;
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        left: 2px;
-        top: 2px;
-        border-radius: 50%;
-        transition: transform 0.2s linear;
-      }
-
-      .checkbox:checked + .checkbox-label .ball {
-        transform: translateX(24px);
-      }
-
-      .dark-theme {
-        background-color: #6b6a6b;
-      }
-    </style>
   </head>
   <body>
-    <div
-      class="dark-mode-toggle"
-      style="margin-top: 50px; text-align: center !important"
-    >
-      <input type="checkbox" class="checkbox" id="checkbox" />
-      <label for="checkbox" class="checkbox-label">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <span class="ball"></span>
-      </label>
-    </div>
+   
+    <label class="theme-switch">
+        <input type="checkbox" class="theme-switch__checkbox" style="position: absolute; right: 0; top: 10px;">
+        <div class="theme-switch__container">
+        <div class="theme-switch__clouds"></div>
+        <div class="theme-switch__stars-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="..." fill="currentColor"></path>
+          </svg>
+        </div>
+        <div class="theme-switch__circle-container">
+          <div class="theme-switch__sun-moon-container">
+            <div class="theme-switch__moon">
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+              <div class="theme-switch__spot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </label>
 
+
+    <br>
+    <br>
     <script>
-      const userPrefersDark = localStorage.getItem("theme") === "dark";
-
-      function setThemePreference(prefersDark) {
-        if (prefersDark) {
-          document.body.classList.add("dark-theme");
-        } else {
-          document.body.classList.remove("dark-theme");
-        }
-      }
-
-      setThemePreference(userPrefersDark);
-
-      const checkbox = document.getElementById("checkbox");
-      checkbox.checked = userPrefersDark;
-
-      checkbox.addEventListener("change", (event) => {
-        const isDarkMode = event.target.checked;
-        setThemePreference(isDarkMode);
-        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
-      });
-    </script>
-  </body>
-</html>
+  
+        // Select the theme switch checkbox
+  const themeSwitch = document.querySelector('.theme-switch__checkbox');
+  
+  // Set the default theme to dark if no saved theme exists
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  
+  // Sync the toggle button's state with the theme
+  // Flip the condition: checkbox is checked for "dark", unchecked for "light"
+  themeSwitch.checked = savedTheme === 'dark';
+  
+  // Listen for changes to the toggle switch
+  themeSwitch.addEventListener('change', () => {
+    const theme = themeSwitch.checked ? 'dark' : 'light'; // Match checkbox state
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme); // Save the user's preference
+  });
+  
+          
+            </script>
 <!-- <body>
     <header>
         <div class="  ml-auto mr-3 ml-md-0 mr-md-auto">
@@ -138,7 +90,7 @@
 
 
                 <div class="text-center" style="text-align: center;">
-                    <span class="badge badge-white badge-pill profile-designation" style="display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 50px; background-color: #fff; border: 1px solid #ccc;">
+                    <span class="badge badge-white badge-pill profile-designation" style="display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 50px; ">
                         <!-- Pulsing Dot -->
                         <div id="holder" style="margin-right: 10px; position: relative; width: 15px; height: 12px;">
                             <div style="width: 10px; height: 10px; border: 5px solid #11ba11; border-radius: 30px; background-color: #00FF00; z-index: 10; position: absolute; left: 0px; top: 0px;"></div>
