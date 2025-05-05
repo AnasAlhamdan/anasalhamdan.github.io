@@ -310,19 +310,6 @@
   word-break: break-word;
   overflow-wrap: break-word;
 }
-/* Fix for text wrapping in hero section */
-.text-primary-600.dark\:text-primary-400.typing,
-.text-xl.md\:text-2xl.mb-6.text-gray-600.dark\:text-gray-400 {
-  white-space: nowrap; /* Prevents breaking to new line */
-}
-
-/* If you need to adjust for mobile */
-@media (max-width: 768px) {
-  .text-primary-600.dark\:text-primary-400.typing,
-  .text-xl.md\:text-2xl.mb-6.text-gray-600.dark\:text-gray-400 {
-    white-space: normal; /* Allow line breaks on very small screens if needed */
-    font-size: 1.5rem; /* Adjust font size for better fit */
-  }
 }
 </style>
 
