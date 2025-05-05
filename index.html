@@ -290,6 +290,26 @@
 .error-notification .notification-button:hover {
     background: #b91c1c;
 }
+@media (max-width: 768px) {
+  nav .container {
+    padding-right: 50px; /* Add space for the toggle button */
+  }
+  
+  #theme-toggle {
+    right: 10px; /* Adjust position of toggle button */
+  }
+}
+/* Fix for contact section icons and text */
+.fas.fa-envelope {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-white.dark\:bg-dark-200.p-6.rounded-lg.shadow-md.flex.items-start p {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 </style>
 
     </style>
