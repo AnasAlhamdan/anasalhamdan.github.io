@@ -1,455 +1,1532 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anas's Resume</title>
-    <link rel="icon" href="assets/images/cv.png" type="icon">
-    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/vendors/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/live-resume.css">
-</head>
-
-  </head>
-  <body>
-   
-    <label class="theme-switch">
-        <input type="checkbox" class="theme-switch__checkbox" style="position: absolute; right: 0; top: 10px;">
-        <div class="theme-switch__container">
-        <div class="theme-switch__clouds"></div>
-        <div class="theme-switch__stars-container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 55" fill="none">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="..." fill="currentColor"></path>
-          </svg>
-        </div>
-        <div class="theme-switch__circle-container">
-          <div class="theme-switch__sun-moon-container">
-            <div class="theme-switch__moon">
-              <div class="theme-switch__spot"></div>
-              <div class="theme-switch__spot"></div>
-              <div class="theme-switch__spot"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </label>
-
-
-    <br>
-    <br>
+    <title>Anas Alhamdan | Product Manager & ML Enthusiast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script>
-  
-        // Select the theme switch checkbox
-  const themeSwitch = document.querySelector('.theme-switch__checkbox');
-  
-  // Set the default theme to dark if no saved theme exists
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  
-  // Sync the toggle button's state with the theme
-  // Flip the condition: checkbox is checked for "dark", unchecked for "light"
-  themeSwitch.checked = savedTheme === 'dark';
-  
-  // Listen for changes to the toggle switch
-  themeSwitch.addEventListener('change', () => {
-    const theme = themeSwitch.checked ? 'dark' : 'light'; // Match checkbox state
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme); // Save the user's preference
-  });
-  
-          
-            </script>
-<!-- <body>
-    <header>
-        <div class="  ml-auto mr-3 ml-md-0 mr-md-auto">
-        </div> -->
-        <!-- <nav class="collapsible-nav" id="collapsible-nav"> -->
-
-
-            <!-- <a href="" class="nav-link active">RESUME</a> -->
-            <!-- <a href="resume.html" class="nav-link "></a> -->
-            <!-- <a href="portfolio" class="nav-link ">PORTFOLIO</a> -->
-     
-        <!-- </nav> -->
-        <!-- <button class="btn btn-menu-toggle btn-white rounded-circle" data-toggle="collapsible-nav"
-            data-target="collapsible-nav"><img src="../assets/images/hamburger.svg" alt="hamburger"></button>
-
-    </header> -->
-    <div class="content-wrapper">
-        <aside>
-            <div class="profile-img-wrapper">
-                <img src="../assets/images/profpic.jpeg" alt="profile">
-            </div>
-            <h1 class="profile-name">Anas Al-Hamdan</h1>
-            <div>
-
-
-
-
-                <div class="text-center" style="text-align: center;">
-                    <span class="badge badge-white badge-pill profile-designation" style="display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 50px; ">
-                        <!-- Pulsing Dot -->
-                        <div id="holder" style="margin-right: 10px; position: relative; width: 15px; height: 12px;">
-                            <div style="width: 10px; height: 10px; border: 5px solid #11ba11; border-radius: 30px; background-color: #00FF00; z-index: 10; position: absolute; left: 0px; top: 0px;"></div>
-                            <div style="border: 10px solid #00FF00; background: transparent; border-radius: 60px; height: 50px; width: 50px; animation: pulse 3s ease-out infinite; position: absolute; top: -20px; left: -20px; z-index: 1; opacity: 0;"></div>
-                        </div>
-                        <!-- Text -->
-                        <span>Available for work</span>
-                    </span>
-                </div>
-                
-                <!-- Pulsing Animation -->
-                <style>
-                @keyframes pulse {
-                  0% {
-                    transform: scale(0);
-                    opacity: 0.0;
-                  }
-                  25% {
-                    transform: scale(0);
-                    opacity: 0.1;
-                  }
-                  50% {
-                    transform: scale(0.1);
-                    opacity: 0.3;
-                  }
-                  75% {
-                    transform: scale(0.5);
-                    opacity: 0.5;
-                  }
-                  100% {
-                    transform: scale(1);
-                    opacity: 0.0;
-                  }
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        dark: {
+                            100: '#121212',
+                            200: '#1e1e1e',
+                            300: '#282828',
+                            400: '#3f3f3f',
+                            500: '#4d4d4d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                 }
-                </style>
-                
-                
-                
-                
-                
-            
-                
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
+        .typing::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #14b8a6;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -39px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #14b8a6;
+        }
+        
+        .pulse-dot {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #00FF00;
+            margin-right: 8px;
+            position: relative;
+            box-shadow: 0 0 0 #00FF00;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+            }
+        }
 
+        .scroll-progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: transparent;
+            z-index: 100;
+        }
 
-            
-                
-                
+        .scroll-progress {
+            height: 100%;
+            background: #14b8a6;
+            width: 0%;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
 
+        .tech-icon {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.15);
+        }
+        /* Modern Notification Styles */
+.notification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
 
+.notification-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
 
+.notification-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    transform: translateY(-50px);
+    transition: all 0.3s ease;
+}
 
-            </div>
+.dark .notification-card {
+    background: #1e1e1e;
+}
 
-            <nav class="social-links">
-                <!-- <a href="https://x.com/Anasalhamdan_" class="social-link"><i class="fab fa-twitter"></i></a> -->
-                <a href="https://github.com/Anasalhamdan" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/anas-alhamdan-254605212" class="social-link"><i class="fab fa-linkedin"></i></a>
-            </nav>
-            <div class="widget">
-                <div class="widget card">
-                    <div class="card-body">
-                        <div class="widget-content">
-                            <h5 class="widget-title card-title">Personal Information</h5>
-                            <p><strong>Date of Birth:</strong> 2001/06/10</p>
-                            <p><strong>PHONE:</strong><br>
-                                 +966 532487724</p>
-                            <p><strong>MAIL:</strong><br> Anasalhamdan4b@gmail.com</p>
-                            <p><strong>Location:</strong><br> Riyadh, Saudi Arabia</p>
-                        </div>
-                    </div>
-                </div>
-                
-            
-            
-            <div>
-                <a href="assets/resume/Anas_Alhamdan_Resume.pdf" download="Anas-Alhamdan-CV2.pdf">
-                    <button class="btn btn-download-cv btn-primary rounded-pill">
-                        <img src="../assets/images/download.svg" alt="download" class="btn-img">DOWNLOAD CV</button>
+.notification-overlay.show .notification-card {
+    transform: translateY(0);
+}
+
+.notification-icon {
+    width: 60px;
+    height: 60px;
+    background: #ccfbf1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 24px;
+    color: #14b8a6;
+    animation: iconPop 0.5s ease;
+}
+
+.dark .notification-icon {
+    background: #134e4a;
+}
+
+@keyframes iconPop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.loading-dots {
+    display: inline-flex;
+    gap: 4px;
+}
+
+.loading-dots span {
+    width: 6px;
+    height: 6px;
+    background: #14b8a6;
+    border-radius: 50%;
+    display: inline-block;
+    animation: loadingDot 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes loadingDot {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+.error-notification .notification-icon {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.dark .error-notification .notification-icon {
+    background: #7f1d1d;
+}
+
+.notification-button {
+    background: #14b8a6;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.notification-button:hover {
+    background: #0d9488;
+    transform: translateY(-2px);
+}
+
+.notification-button:active {
+    transform: translateY(0);
+}
+
+.error-notification .notification-button {
+    background: #dc2626;
+}
+
+.error-notification .notification-button:hover {
+    background: #b91c1c;
+}
+</style>
+
+    </style>
+</head>
+<body class="font-sans bg-gray-50 dark:bg-dark-100 text-gray-800 dark:text-gray-200">
+    <div class="scroll-progress-container">
+        <div class="scroll-progress"></div>
+    </div>
+
+    <!-- Dark Mode Toggle -->
+    <div class="fixed top-4 right-2 z-50">
+        <button id="theme-toggle" class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-dark-300 shadow-md hover:shadow-lg transition-all duration-300">
+            <i class="fas fa-sun text-yellow-500 dark:hidden"></i>
+            <i class="fas fa-moon text-blue-300 hidden dark:block"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-40 bg-white/80 dark:bg-dark-200/80 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-primary-600 dark:text-primary-400">
+                    <span>Anas.</span>
                 </a>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 dark:text-gray-200 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex space-x-6 items-center">
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Skills</a>
+                    <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Education</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="#achievements" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Achievements</a>
+                    <a href="#contact" class="ml-4 px-4 py-2 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-colors">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-dark-200 shadow-lg absolute w-full">
+            <div class="flex flex-col px-4 py-2 space-y-3">
+                <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">About</a>
+                <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Skills</a>
+                <a href="#education" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Education</a>
+                <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Projects</a>
+                <a href="#achievements" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Achievements</a>
+                <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4 md:px-6 py-12 md:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                            <span class="pulse-dot"></span>
+                            Available for work
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                        <span class="block mb-2">Hi, I'm</span>
+                        <span class="text-primary-600 dark:text-primary-400 typing" id="typing-text">Anas Alhamdan</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-6 text-gray-600 dark:text-gray-400">Product Manager | NLP & Machine Learning Enthusiast</p>
+                    <p class="text-lg md:text-xl mb-8 max-w-lg text-gray-600 dark:text-gray-400">
+                        Final-year Computer Science student with skills in Product Mangament, Python, Machine Learning, NLP and passionate about building user-centered products.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-colors">
+                            Let's Connect
+                        </a>
+                        <a href="#projects" class="px-6 py-3 rounded-full border-2 border-primary-600 dark:border-primary-400 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 dark:hover:text-dark-100 transition-colors">
+                            View My Work
+                        </a>
+                    </div>
+                    <div class="mt-10 flex space-x-4">
+                        <a href="https://github.com/AnasAlhamdan" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-primary-600 hover:text-primary-600 dark:hover:border-primary-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/anas-alhamdan-254605212" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-primary-600 hover:text-primary-600 dark:hover:border-primary-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:Anasalhamdan4b@gmail.com" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-primary-600 hover:text-primary-600 dark:hover:border-primary-400 dark:hover:text-primary-400 transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-600 dark:to-primary-800 absolute top-0 left-0 filter blur-3xl opacity-20 animate-pulse"></div>
+                        <div class="relative z-10 floating">
+                            <img src="assets\images\myprofilepic.jpg" alt="Anas Alhamdan" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white dark:border-dark-300 shadow-xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-dark-200">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">Who am I?</h3>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
+                        I'm a final-year Computer Science student at King Saud University with a strong passion for Product Management, Machine Learning, and Natural Language Processing.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
+                        My expertise lies in developing AI-driven solutions and user-centered products. I enjoy leading projects from ideation to deployment, combining technical knowledge with product management skills.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <h4 class="font-semibold mb-2 text-gray-700 dark:text-gray-300">Location</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Riyadh, Saudi Arabia</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-gray-700 dark:text-gray-300">Phone</h4>
+                            <p class="text-gray-600 dark:text-gray-400">+966 532487724</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-gray-700 dark:text-gray-300">Email</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Anasalhamdan4b@gmail.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-gray-700 dark:text-gray-300">Birthday</h4>
+                            <p class="text-gray-600 dark:text-gray-400">June 10, 2001</p>
+                        </div>
+                    </div>
+                    <a href="assets/resume/Anas_Alhamdan_Resume.pdf" download class="px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-colors inline-flex items-center">
+                        <i class="fas fa-download mr-2"></i> Download CV
+                    </a>
+                </div>
+                <div>
+                    <div class="bg-gray-100 dark:bg-dark-300 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400">My Objective</h3>
+                        <p class="text-lg mb-6 text-gray-600 dark:text-gray-400">
+                            Seeking a Co-op opportunity to apply my technical and product management skills in a collaborative, innovative environment where I can contribute to meaningful projects while continuing to grow professionally.
+                        </p>
+                        <!-- <h4 class="text-xl font-semibold mb-4 text-gray-700 dark:text-gray-300">Languages</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300">Arabic (Native)</span>
+                                    <span class="text-gray-700 dark:text-gray-300">100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-dark-400 rounded-full h-2">
+                                    <div class="bg-primary-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-700 dark:text-gray-300">English</span>
+                                    <span class="text-gray-700 dark:text-gray-300">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 dark:bg-dark-400 rounded-full h-2">
+                                    <div class="bg-primary-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-50 dark:bg-dark-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
             </div>
             
-
-            </div>
-            <div class="widget card">
-                <div class="card-body">
-                    <div class="widget-content">
-                        <h5 class="widget-title card-title">Skills</h5>
-                        <p>Product Management</p>
-                        <p>Data Analysis</p>
-                        <p>Information Retrieval</p>
-                        <p>NLP</p>
-                        <p></p>
-
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white dark:bg-dark-200 rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-cogs text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Technical Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Python</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Java</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">SQL</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">HTML/CSS</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">LaTeX</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Pandas</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">NumPy</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Matplotlib</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Power BI</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-dark-200 rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Data Science & AI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">NLP</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Sentiment Analysis</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Word Embeddings</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Information Retrieval</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Machine Learning</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Semantic Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-dark-200 rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Product Management</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Roadmap Development</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Market Research</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Cross-functional Team Coordination</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Product Lifecycle Management</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Data-driven Strategy</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-dark-200 rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                            <i class="fas fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Product Mangament Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Git</span> -->
+                        <!-- <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Jupyter Notebooks</span> -->
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Jira</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Trello</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">Notion</span>
                     </div>
                 </div>
             </div>
-        </aside>
-        <main >
-            <section class="resume-section ">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h6 class="section-subtitle">RESUME</h6>
-                        <h2 class="section-title">EDUCATION</h2>
-                        <ul class="time-line">
-                            <li class="time-line-item">
-                                <span class="badge badge-primary">2021 - Present</span>
-                                <h6 class="time-line-item-title">Bachelor Degree in Computer science</h6>
-                                <p class="time-line-item-subtitle">King Saud University</p>
-                                <p class="time-line-item-content"> Expected Graduation Date: Sep 2025</p>
-                            </li>
+            
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-8">Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-12">
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="Python">
+                        <i class="fab fa-python text-3xl text-blue-500"></i>
+                    </div>
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="Java">
+                        <i class="fab fa-java text-3xl text-red-500"></i>
+                    </div>
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="Database">
+                        <i class="fas fa-database text-3xl text-green-500"></i>
+                    </div>
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="HTML">
+                        <i class="fab fa-html5 text-3xl text-orange-500"></i>
+                    </div>
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="CSS">
+                        <i class="fab fa-css3-alt text-3xl text-blue-600"></i>
+                    </div>
+                    <div class="tech-icon w-16 h-16 flex items-center justify-center bg-white dark:bg-dark-200 rounded-full shadow-md" title="Git">
+                        <i class="fab fa-git-alt text-3xl text-orange-600"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Section -->
+    <section id="education" class="py-16 bg-white dark:bg-dark-200">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education & Experience</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400 flex items-center">
+                        <i class="fas fa-graduation-cap mr-3"></i>Education
+                    </h3>
+                    <div class="relative pl-10">
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">King Saud University</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        2021 - Present
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400 mb-2">Bachelor's Degree in Computer Science</p>
+                                <p class="text-gray-500 dark:text-gray-500">Expected Graduation: Sep 2025</p>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400 flex items-center">
+                            <i class="fas fa-graduation-cap mr-3"></i>Certifications
+                        </h3>
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">IBM SkillsBuild</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        Certificate
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Artificial Intelligence Fundamentals</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">NVIDIA</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        Certificate
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Introduction to Transformer-Based Natural Language Processing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary-600 dark:text-primary-400 flex items-center">
+                        <i class="fas fa-briefcase mr-3"></i>Experience & Volunteering
+                    </h3>
+                    <div class="relative pl-10">
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">Leader, Public Relations Committee</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        2024/08 – 2025/01
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Cyber Security Club</p>
+                            </div>
+                        </div>
                         
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <h6 class="section-subtitle">Experience</h6>
-                        <h2 class="section-title">Projects</h2>
-                        <ul class="time-line">
-                            <li class="time-line-item">
-                                <span class="badge badge-primary">2024 / 11 - Present</span>
-                                <h6 class="time-line-item-title">UniBag</h6>
-                                <p class="time-line-item-subtitle">Description: Developed an innovative platform designed to enhance university students' learning experience. UniBag centralizes 
-                                    study materials, tracks progress, and provides AI-generated practice questions to support efficient and effective 
-                                    academic achievement. Introduced structured learning, personalized scheduling, and an extensive academic 
-                                    repository to address common student challenges.</p>
-                                <!-- <p class="time-line-item-content">Technologies Used: Python, Flask -->
-                                </p>
-                            </li>
-                            <li class="time-line-item">
-                                <span class="badge badge-primary"> 2024 / 09 – 2024 / 10  </span>
-                                <h6 class="time-line-item-title"> Search Engine</h6>
-                                <p class="time-line-item-subtitle"> Description: Developed a Python-based search engine that indexes and searches news articles using an inverted index and 
-                                    boolean search. Utilized multiprocessing to enhance indexing performance, allowing efficient processing of large 
-                                    datasets. Implemented user-friendly features like logical query parsing and real-time result display.
-                                      </p>
-                                <p class="time-line-item-content">
-                                   
-                                    
-                                    Technologies Used: Python, Text Preprocessing, Inverted Index
-                                </p>
-                            </li>
-                            <li class="time-line-item">
-                                <span class="badge badge-primary"> 2024 / 11 – 2024 / 11  </span>
-                                <h6 class="time-line-item-title"> Email Spam Classifier </h6>
-                                <p class="time-line-item-subtitle"> Description: This project involves developing an automated email spam classifier capable of categorizing emails as either SPAM or HAM (not spam). The classifier is built using the Multinomial Naive Bayes algorithm, a simple yet effective method for text classification tasks.
-                                      </p>
-                                <p class="time-line-item-content">
-                                   
-                                    
-                                    Technologies Used: Python, Multinomial Naive Bayes, Tokenization, Stemming, Vectorization.
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <section class="clients-section">
-                    <!-- <h6 class="section-subtitle">Technologies</h6> -->
-                    <h2 class="section-title">Technologies</h2>
-                    <div class="client-logos-wrapper">
-                
-                        <div class="client-logo">
-                            <img src="../assets/images/python_icon.png" alt="Python Logo" title="Python" style="width: auto; height: auto;">
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">Social Media Team Leader</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        2023/01 – 2024/01
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Cyber Security Club</p>
+                            </div>
                         </div>
-                
-                        <div class="client-logo">
-                            <img src="../assets/images/JAVA_PIC.png" alt="Java Logo" title="Java" style="width: auto; height: auto;">
+                        
+                        <div class="timeline-item pb-8">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">Marketing Team Member</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        2023/08 – 2024/02
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Student Partnership Program</p>
+                            </div>
                         </div>
-                
-                        <div class="client-logo">
-                            <img src="../assets/images/numpy_pic.png" alt="NumPy Logo" title="NumPy" style="width: auto; height: auto;">
-                        </div>
-                
-                        <div class="client-logo">
-                            <img src="../assets/images/sql_pic.png" alt="SQL Logo" title="SQL" style="width: auto; height: auto;">
-                        </div>
-                
-                    </div>
-                </section>
-                
-            <section class="services-section">
-                <h6 class="section-subtitle">WHAT I KNOW</h6>
-                <h2 class="section-title">Skills</h2>
-                <div class="row">
-                    <div class="media service-card col-lg-6">
-                        <div class="service-icon">
-                            <img src="../assets/images/10608754.png" width="24px" alt="target">
-                        </div>
-                        <div class="media-body">
-                            <h5 class="service-title">Product Management</h5>
-                            <p class="service-description"> Roadmap Development, Market Research, Cross
-                                functional Team Coordination, Product Lifecycle 
-                                Management, Data-driven Strategy.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="media service-card col-lg-6">
-                        <div class="service-icon">
-                            <img src="../assets/images/microchip-ai.png" width="24px" alt="bulb"> 
-                        </div>
-                        <div class="media-body">
-                            <h5 class="service-title"> NLP & Machine Learning  </h5>
-                            <p class="service-description"> Word Embedding Models, Semantic Analysis, 
-                                Information Retrieval
-                            </p>
-                        </div>
-                    </div>
-                    <div class="media service-card col-lg-6">
-                        <div class="service-icon">
-                            <img src="../assets/images/data_logo.png" width="24px" alt="bulb"> 
-                        </div>
-                        <div class="media-body">
-                            <h5 class="service-title"> Data Analysis  </h5>
-                            <p class="service-description"> Pandas, NumPy, SQL
-                            </p>
-                        </div>
-                    </div>
-                    <div class="media service-card col-lg-6">
-                        <div class="service-icon">
-                            <img src="../assets/images/002-development.svg" alt="development">
-                        </div>
-                        <div class="media-body">
-                            <h5 class="service-title"> Programming Languages </h5>
-                            <p class="service-description"> Python, Java, HTML, CSS, SQL, LaTeX.
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="media service-card col-lg-6">
-                        <div class="service-icon">
-                            <img src="../assets/images/square-terminal.png" width="24px">
-                        </div>
-                        <div class="media-body">
-                            <h5 class="service-title"> Tools & Platforms                            </h5>
-                            <p class="service-description"> Git, Jupyter Notebooks, Jira, Trello, Notion.
-
-                            </p>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-gray-50 dark:bg-dark-300 p-5 rounded-lg shadow-md">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h4 class="text-xl font-semibold">Member</h4>
+                                    <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">
+                                        2022/12
+                                    </span>
+                                </div>
+                                <p class="text-gray-600 dark:text-gray-400">Outstanding and Talented Students Program</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- <section class="achievements-section"> -->
-                <!-- <h6 class="section-subtitle">WHAT I DO</h6> -->
-                <!-- <h2 class="section-title">Publications</h2> -->
-                <!-- <div > -->
-                    <!-- <div class="media achievement-card">
-                        <img src="assets/images/puzzle.svg" alt="puzzle" class="achievement-card-icon">
-                        <div class="media-body">
-                            <h4 class="achievement-card-title">550+</h4>
-                            <p class="achievement-card-description">COMPLETED PROJECTS</p>
-                        </div>
-                    </div>
-                    <div class="media achievement-card">
-                        <img src="assets/images/team.svg" alt="puzzle" class="achievement-card-icon">
-                        <div class="media-body">
-                            <h4 class="achievement-card-title">23K</h4>
-                            <p class="achievement-card-description">HAPPY CLIENTS</p>
-                        </div>
-                    </div>
-                    <div class="media achievement-card">
-                        <img src="assets/images/trophy.svg" alt="puzzle" class="achievement-card-icon">
-                        <div class="media-body">
-                            <h4 class="achievement-card-title">55</h4>
-                            <p class="achievement-card-description">AWARDS RECIEVED</p>
-                        </div>
-                    </div> -->
-                   <!-- <strong > 
-                    Nabesh: Building a Scalable Arabic Word Similarity Ranker<br></strong>
-                    Mohamed Alkaoud∗, Mishari Albuhairi†, Abdulaziz Alabdulkarim‡ , Mohammed AlSowelim§
-                     <br> -->
-
-                 <!-- <h6>Second author in the paper</h6> -->
-                 <!-- <br>
-                    waiting for approval from <strong>IEEE Transactions on Communications</strong>
-                </div>
-            </section> -->
-       
-        <!-- </div> -->
-        <section class="portfolio-section">
-            <h2 class="section-title">PORTFOLIO</h2>
-        
-            <div class="portfolio-wrapper">
-                <figure class="portfolio-item hover-box">
-                    <a href="https://unibag.app">
-                        <img src="../assets/images/UNI.png" alt="project" class="portfolio-item-img">
-                        <figcaption class="portfolio-item-details overlay">
-                            <h5 class="portfolio-item-title">UNIBAG</h5>
-                            <p class="portfolio-item-description">AI-powered platform that streamlines your study process by organizing your materials, generating practice questions, and tracking your progress, And much more.</p>
-                        </figcaption>
-                    </a>
-                </figure>
-        
-                <figure class="portfolio-item hover-box">
-                    <a href="https://github.com/AnasAlhamdan/Task-Management-System.git" target="_blank">
-                        <img src="../assets/images/TASK.png" alt="project" class="portfolio-item-img">
-                        <figcaption class="portfolio-item-details overlay">
-                            <h5 class="portfolio-item-title">TASK MANAGER</h5>
-                            <p class="portfolio-item-description">A task management platform, similar to Trello, that enables users to track the status of tasks, assign tasks to team members, and view details such as task descriptions, deadlines, and participating members.</p>
-                        </figcaption>
-                    </a>
-                </figure>
-        
-                <figure class="portfolio-item hover-box">
-                    <a href="https://github.com/AnasAlhamdan/Police-Case-Management.git" target="_blank">
-                        <img src="../assets/images/police.jpg" alt="project" class="portfolio-item-img">
-                        <figcaption class="portfolio-item-details overlay">
-                            <h5 class="portfolio-item-title">Police Station Case Management System</h5>
-                            <p class="portfolio-item-description">Developed a case management system for police stations to track and manage case information effectively.</p>
-                        </figcaption>
-                    </a>
-                </figure>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <!-- Modifications to your Projects Section -->
+<section id="projects" class="py-16 bg-gray-50 dark:bg-dark-100">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="mb-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">My Projects</h2>
+            <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
+            <p class="text-lg mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Here are some of the projects I've worked on that showcase my skills in programming, 
+                machine learning, and product development.
+            </p>
+        </div>
         
-                <!-- <figure class="portfolio-item hover-box">
-                    <img src="../assets/images/img_4.png" alt="project" class="portfolio-item-img">
-                    <figcaption class="portfolio-item-details overlay">
-                        <h5 class="portfolio-item-title">PROJECT 04</h5>
-                        <p class="portfolio-item-description">Branding, Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio-item hover-box">
-                    <img src="../assets/images/img_5.png" alt="project" class="portfolio-item-img">
-                    <figcaption class="portfolio-item-details overlay">
-                        <h5 class="portfolio-item-title">PROJECT 05</h5>
-                        <p class="portfolio-item-description">Branding, Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio-item hover-box">
-                    <img src="../assets/images/img_6.png" alt="project" class="portfolio-item-img">
-                    <figcaption class="portfolio-item-details overlay">
-                        <h5 class="portfolio-item-title">PROJECT 06</h5>
-                        <p class="portfolio-item-description">Branding, Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio-item hover-box">
-                    <img src="../assets/images/img_7.png" alt="project" class="portfolio-item-img">
-                    <figcaption class="portfolio-item-details overlay">
-                        <h5 class="portfolio-item-title">PROJECT 07</h5>
-                        <p class="portfolio-item-description">Branding, Photography</p>
-                    </figcaption>
-                </figure>
-                <figure class="portfolio-item hover-box">
-                    <img src="../assets/images/img_8.png" alt="project" class="portfolio-item-img">
-                    <figcaption class="portfolio-item-details overlay">
-                        <h5 class="portfolio-item-title">PROJECT 08</h5>
-                        <p class="portfolio-item-description">Branding, Photography</p>
-                    </figcaption>
-                </figure> -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Initial projects (always visible) -->
+            <!-- Project 1 -->
+            <div class="project-card bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\UNIBAG.png" alt="UniBag" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">UniBag</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">ML</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Product</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        An innovative platform that enhances university students' learning by centralizing study materials, 
+                        tracking progress, and generating AI-powered practice questions for more efficient and effective academic success.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://unibag.app" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+            <!-- Project 2 -->
+            <div class="project-card bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\search.png" alt="Search Engine" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">Search Engine</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">Python</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">NLP</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Information Retrieval</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        A search engine that indexes and searches news articles using an inverted index and 
+                        boolean search with multiprocessing to enhance indexing performance.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <br>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\rast.png" alt="RAST AI Stock Prediction" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">RAST AI Stock Prediction</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">AI</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">ML</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">Financial</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Sentiment Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        An advanced AI model for Saudi stock market prediction that combines sentiment analysis of 160,000+ 
+                        news articles with historical financial data. (Graduation Project - In Progress)
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                            <span>Coming Soon</span>
+                            <i class="fas fa-clock ml-1 text-sm"></i>
+                        </a>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-purple-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional projects (initially hidden) -->
+            <div class="project-card hidden-project bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md hidden">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\spam.png" alt="Email Spam Classifier" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">Email Spam Classifier</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">ML</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        An automated email spam classifier built using the Multinomial Naive Bayes algorithm, 
+                        capable of categorizing emails as either SPAM or HAM (not spam).
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://9d14-2001-16a2-c85e-7100-2571-c92a-5757-bf2.ngrok-free.app/" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TaskHive -->
+            <div class="project-card hidden-project bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md hidden">
+                <div class="relative h-48 overflow-hidden">
+                  <img src="assets/images/TaskHive.png" alt="TaskHive" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                    <div class="p-4">
+                      <h3 class="text-white text-xl font-bold">TaskHive</h3>
+                      <div class="flex mt-2">
+                        <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">React</span>
+                        <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">PHP</span>
+                        <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">MySQL</span>
+                        <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Kanban</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-5">
+                  <p class="text-gray-600 dark:text-gray-400 mb-4">
+                    TaskHive is a minimalist task management system built with React, PHP, and MySQL. 
+                    It features a Kanban board, task analytics, subtasks, and a responsive design aimed 
+                    at simplifying productivity for most users.
+                  </p>
+                  <div class="flex justify-between items-center">
+                    <a href="https://taskhive.albuhairi.me/" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                      <span>View Project</span>
+                      <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                    </a>
+                    <div class="flex space-x-2">
+                      <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                      <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                      <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            
+            <!-- Task Manager -->
+            <div class="project-card hidden-project bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md hidden">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\TASK.png" alt="Task Manager" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">Task Manager</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">Web</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">UI/UX</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">Kanban</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        A task management platform similar to Trello, enabling users to track task status, 
+                        assign tasks to team members, and view details like descriptions and deadlines.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/AnasAlhamdan/Task-Management-System.git" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-cyan-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-pink-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Police Case Management -->
+            <div class="project-card hidden-project bg-white dark:bg-dark-200 rounded-lg overflow-hidden shadow-md hidden">
+                <div class="relative h-48 overflow-hidden">
+                    <img src="..\assets\images\police.jpg" alt="Police Case Management" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white text-xl font-bold">Police Case Management</h3>
+                            <div class="flex mt-2">
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">Python</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white mr-2">Database</span>
+                                <span class="px-2 py-1 rounded-full text-xs bg-primary-600/80 text-white">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-5">
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        A case management system for police stations to track and manage case information effectively, 
+                        improving organization and data accessibility.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <a href="https://github.com/AnasAlhamdan/Police-Case-Management.git" target="_blank" class="text-primary-600 dark:text-primary-400 hover:underline inline-flex items-center">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right ml-1 text-sm"></i>
+                        </a>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
+        <!-- Show More/Less Button -->
+        <div class="text-center mt-12">
+            <button id="show-more-btn" class="px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-all duration-300 shadow-md hover:shadow-lg inline-flex items-center">
+                <span>Show More Projects</span>
+                <i class="fas fa-chevron-down ml-2 transition-transform duration-300"></i>
+            </button>
+        </div>
     </div>
- 
-        </main>
+</section>
+
+<!-- JavaScript for Show More/Less functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const showMoreBtn = document.getElementById('show-more-btn');
+        const hiddenProjects = document.querySelectorAll('.hidden-project');
+        let projectsVisible = false;
+        
+        showMoreBtn.addEventListener('click', function() {
+            if (!projectsVisible) {
+                // Show hidden projects with animation
+                hiddenProjects.forEach((project, index) => {
+                    setTimeout(() => {
+                        project.classList.remove('hidden');
+                        project.classList.add('animate__animated', 'animate__fadeIn');
+                    }, index * 100);
+                });
+                
+                // Update button
+                showMoreBtn.querySelector('span').textContent = 'Show Less';
+                showMoreBtn.querySelector('i').classList.add('rotate-180');
+                
+                projectsVisible = true;
+            } else {
+                // Hide projects
+                hiddenProjects.forEach((project) => {
+                    project.classList.add('hidden');
+                });
+                
+                // Update button
+                showMoreBtn.querySelector('span').textContent = 'Show More Projects';
+                showMoreBtn.querySelector('i').classList.remove('rotate-180');
+                
+                // Scroll back to projects section
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                
+                projectsVisible = false;
+            }
+        });
+        
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            .animate__animated {
+                animation-duration: 0.5s;
+                animation-fill-mode: both;
+            }
+            
+            .animate__fadeIn {
+                animation-name: fadeIn;
+            }
+            
+            .rotate-180 {
+                transform: rotate(180deg);
+            }
+        `;
+        document.head.appendChild(style);
+    });
+</script>
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-16 bg-white dark:bg-dark-200">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Achievements</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-dark-300 rounded-lg shadow-lg overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="p-6 md:p-8 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold mb-4 text-primary-600 dark:text-primary-400">
+                            Transformation Hackathon - 2nd Place
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            Led a talented team to win 2nd place at the Transformation Hackathon at King Saud University. 
+                            Our innovative solution was recognized by the University President and the CTO of the Transformation Office.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">#SaudiVision2030</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">#KingSaudUniversity</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">#Leadership</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200">#Innovation</span>
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-500">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-users"></i>
+                                <span>Team members: Mishari Albuhairi and Mohammed Almajed</span>
+                            </div>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <i class="fas fa-medal"></i>
+                                <span>Awarded by Prof. Abdullah Alsalman (President of KSU) and Mr. Andrea Longhi (CTO of Transformation Office)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-dark-400 flex items-center justify-center p-6">
+                        <div class="grid grid-cols-2 gap-3 w-full">
+                            <img src="..\assets\images\hackathon_pic.jpg" alt="Hackathon Image 1" class="w-full h-36 object-cover rounded-lg shadow-md">
+                            <img src="..\assets\images\HACK_CAL.jpg" alt="Hackathon Image 2" class="w-full h-36 object-cover rounded-lg shadow-md">
+                            <img src="..\assets\images\HACK_US.jpg" alt="Hackathon Image 3" class="w-full h-36 object-cover rounded-lg shadow-md">
+                            <img src="..\assets\images\hackathon_me_talking.jpg" alt="Hackathon Image 4" class="w-full h-36 object-cover rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="bg-gray-50 dark:bg-dark-300 p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400">
+                        <i class="fas fa-award text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">2nd Place</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Transformation Hackathon at King Saud University</p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-dark-300 p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400">
+                        <i class="fas fa-certificate text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Certification</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Artificial Intelligence Fundamentals from IBM SkillsBuild</p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-dark-300 p-6 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400">
+                        <i class="fas fa-user-graduate text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Member</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Outstanding and Talented Students Program</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50 dark:bg-dark-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto"></div>
+                <p class="text-lg mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    Feel free to reach out if you're looking for a collaborator, have a question, 
+                    or just want to connect.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-300 text-gray-900 dark:text-gray-100">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-300 text-gray-900 dark:text-gray-100">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-300 text-gray-900 dark:text-gray-100">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white dark:bg-dark-300 text-gray-900 dark:text-gray-100"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white transition-colors">
+                            Send Message
+                        </button>
+                    
+                        
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Riyadh, Saudi Arabia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Anasalhamdan4b@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-400">+966 532487724</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md flex items-start">
+                            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary-100 dark:bg-primary-900 text-primary-600 dark:text-primary-400 mr-4">
+                                <i class="fas fa-globe text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold mb-1">Website</h4>
+                                <p class="text-gray-600 dark:text-gray-400">alhamdan.me</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-white dark:bg-dark-200 p-6 rounded-lg shadow-md">
+                        <h4 class="text-lg font-semibold mb-4">Connect With Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/AnasAlhamdan" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-dark-300 text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900 dark:hover:text-primary-400 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/anas-alhamdan-254605212" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-dark-300 text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900 dark:hover:text-primary-400 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:Anasalhamdan4b@gmail.com" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 dark:bg-dark-300 text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900 dark:hover:text-primary-400 transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-white dark:bg-dark-200 border-t border-gray-200 dark:border-dark-300">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold text-primary-600 dark:text-primary-400">Anas Alhamdan</span>
+                    <p class="text-gray-600 dark:text-gray-400 mt-1">Product Manager | NLP & ML Enthusiast</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a>
+                    <a href="#skills" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-gray-500 dark:text-gray-500">© 2025 Anas Alhamdan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-primary-600 text-white shadow-lg z-50 opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark/Light Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or use device preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            htmlElement.classList.add('dark');
+            themeToggle.checked = true;
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Click outside to close mobile menu
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Typing Effect
+        const typingText = document.getElementById('typing-text');
+        const phrases = ['Anas Alhamdan', 'Product Manager', 'ML Enthusiast', 'NLP Developer', 'Computer Scientist'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                isDeleting = true;
+                typingSpeed = 1500; // Pause at the end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500; // Pause before typing the next phrase
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        // Start the typing effect
+        setTimeout(typeEffect, 1000);
+        
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollProgress = (scrollTop / scrollHeight) * 100;
+            
+            document.querySelector('.scroll-progress').style.width = scrollProgress + '%';
+            
+            // Back to Top Button visibility
+            const backToTopButton = document.getElementById('back-to-top');
+            if (scrollTop > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        // Back to Top Button click
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+    
+
+
+        
+        // Initialize GSAP animations
+        if (typeof gsap !== 'undefined') {
+            // Animate elements when they come into view
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Animate project cards
+            gsap.utils.toArray('.project-card').forEach(card => {
+                gsap.from(card, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top bottom-=100',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+            
+            // Animate skill badges
+            gsap.utils.toArray('.skill-badge').forEach((badge, i) => {
+                gsap.from(badge, {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.4,
+                    delay: i * 0.05,
+                    scrollTrigger: {
+                        trigger: badge.parentElement,
+                        start: 'top bottom-=100',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+            
+            // Animate timeline items
+            gsap.utils.toArray('.timeline-item').forEach(item => {
+                gsap.from(item, {
+                    x: -50,
+                    opacity: 0,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top bottom-=100',
+                        toggleActions: 'play none none none'
+                    }
+                });
+            });
+        }
+        
+    </script>
+    
+
+   
+
+<!-- EmailJS Integration -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        // Initialize EmailJS with your user ID
+        emailjs.init("7O82r2KghqrRuCm61");
+    })();
+</script>
+<!-- Contact Form Handling -->
+<script>
+    // Modern Notification Functions
+    function showNotification(message, type = 'success') {
+        const overlay = document.getElementById('notificationOverlay');
+        const card = overlay.querySelector('.notification-card');
+        const icon = card.querySelector('.notification-icon');
+        const title = document.getElementById('notificationTitle');
+        const messageElement = document.getElementById('notificationMessage');
+        const button = document.getElementById('notificationButton');
+        
+        // Reset classes
+        card.className = 'notification-card';
+        icon.className = 'notification-icon';
+        button.className = 'notification-button';
+        button.style.display = 'inline-block';
+        
+        // Set content based on type
+        if (type === 'success') {
+            icon.innerHTML = '<i class="fas fa-check"></i>';
+            title.textContent = 'Message Sent!';
+            title.className = 'text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400';
+        } else if (type === 'error') {
+            card.className += ' error-notification';
+            icon.innerHTML = '<i class="fas fa-exclamation-circle"></i>';
+            title.textContent = 'Error';
+            title.className = 'text-xl font-semibold mb-2 text-red-600 dark:text-red-400';
+        }
+        
+        messageElement.textContent = message;
+        
+        // Show notification
+        overlay.classList.add('show');
+        
+        // Hide notification when button is clicked
+        button.onclick = () => {
+            overlay.classList.remove('show');
+        };
+        
+        // Click outside to close
+        overlay.onclick = (e) => {
+            if (e.target === overlay) {
+                overlay.classList.remove('show');
+            }
+        };
+        
+        // Auto-hide success messages after 5 seconds
+        if (type === 'success') {
+            setTimeout(() => {
+                overlay.classList.remove('show');
+            }, 5000);
+        }
+    }
+
+    function showLoadingNotification() {
+        const overlay = document.getElementById('notificationOverlay');
+        const card = overlay.querySelector('.notification-card');
+        const icon = card.querySelector('.notification-icon');
+        const title = document.getElementById('notificationTitle');
+        const messageElement = document.getElementById('notificationMessage');
+        const button = document.getElementById('notificationButton');
+        
+        // Set loading content
+        icon.innerHTML = `
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        `;
+        title.textContent = 'Sending Message...';
+        title.className = 'text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400';
+        messageElement.textContent = 'Please wait while we send your message.';
+        button.style.display = 'none';
+        
+        // Show notification
+        overlay.classList.add('show');
+    }
+
+    // Form submission handling
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Show loading notification
+        showLoadingNotification();
+        
+        try {
+            // Send the form using EmailJS
+            const response = await emailjs.sendForm(
+                'portfolio_contact', // Replace with your actual service ID
+                'template_ls87ppn', 
+                this
+            );
+            
+            if (response.status === 200) {
+                // Show success notification
+                showNotification("Thank you for your message! I'll get back to you soon.", 'success');
+                // Reset the form
+                this.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            showNotification('There was a problem sending your message. Please try again or contact me directly at Anasalhamdan4b@gmail.com', 'error');
+        }
+    });
+</script>
+
+<!-- Notification Overlay -->
+<div id="notificationOverlay" class="notification-overlay">
+    <div class="notification-card">
+        <div class="notification-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <h3 id="notificationTitle" class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Message Sent!</h3>
+        <p id="notificationMessage" class="text-gray-600 dark:text-gray-400 mb-6">
+            Thank you for your message. I'll get back to you soon.
+        </p>
+        <button id="notificationButton" class="notification-button">OK</button>
     </div>
-    <script src="../assets/vendors/jquery/dist/jquery.min.js"></script>
-    <script src="../assets/vendors/@popperjs/core/dist/umd/popper-base.min.js"></script>
-    <script src="../assets/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/js/live-resume.js"></script>
+</div>
+
 </body>
-
 </html>
 
+</body>
+</html>
